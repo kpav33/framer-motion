@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // import lottie from "lottie-web";
 // import json1 from "../data/lottie-1.json";
@@ -73,7 +74,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h1 className={styles.title} id="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
@@ -289,6 +290,9 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
+        <Link href="#title">
+          <a>Back to top</a>
+        </Link>
       </footer>
     </div>
   );
