@@ -77,6 +77,9 @@ export default function Home() {
         <h1 className={styles.title} id="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <Link href="#section">
+          <a>To section!</a>
+        </Link>
 
         {/* <motion.div
           animate={{
@@ -253,6 +256,7 @@ export default function Home() {
             hidden: { opacity: 0 },
           }}
           style={{ height: "auto", width: "400px" }}
+          id="section"
         >
           <h1>
             Unlock your digital potential with a bespoke blockchain development
@@ -277,6 +281,38 @@ export default function Home() {
             HELLLO
           </motion.div> */}
         </motion.section>
+
+        <section>
+          <form name="contact" method="POST" data-netlify="true">
+            <p>
+              <label>
+                Your Name: <input type="text" name="name" />
+              </label>
+            </p>
+            <p>
+              <label>
+                Your Email: <input type="email" name="email" />
+              </label>
+            </p>
+            <p>
+              <label>
+                Your Role:{" "}
+                <select name="role[]" multiple>
+                  <option value="leader">Leader</option>
+                  <option value="follower">Follower</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Message: <textarea name="message"></textarea>
+              </label>
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
+          </form>
+        </section>
       </main>
 
       <footer className={styles.footer}>
@@ -290,7 +326,7 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-        <Link href="#title">
+        <Link href="/">
           <a>Back to top</a>
         </Link>
       </footer>
