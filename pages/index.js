@@ -282,7 +282,16 @@ export default function Home() {
           </motion.div> */}
         </motion.section>
 
-        <section>
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1.8, ease: "backInOut" }}
+          variants={{
+            visible: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+        >
           <form name="contact" method="POST" data-netlify="true">
             <p>
               <label>
@@ -312,7 +321,7 @@ export default function Home() {
               <button type="submit">Send</button>
             </p>
           </form>
-        </section>
+        </motion.section>
       </main>
 
       <footer className={styles.footer}>
