@@ -6,38 +6,63 @@ import styles from "../styles/Home.module.css";
 
 import { motion } from "framer-motion";
 
-import lottie from "lottie-web";
-import json from "../data/lottie-1.json";
-import json1 from "../data/lottie-2.json";
-import json2 from "../data/lottie-3.json";
-import json3 from "../data/lottie-4.json";
+// import lottie from "lottie-web";
+// import json1 from "../data/lottie-1.json";
+// import json2 from "../data/lottie-2.json";
+// import json3 from "../data/lottie-3.json";
+// import json4 from "../data/lottie-4.json";
 
 export default function Home() {
+  // Use lottie animations
   // Use ref instead of query selector?
-  useEffect(() => {
-    lottie.loadAnimation({
-      container: document.querySelector("#lottie"),
-      animationData: json,
-      loop: false,
-    });
-    lottie.loadAnimation({
-      container: document.querySelector("#lottie-1"),
-      animationData: json1,
-      loop: false,
-    });
-    lottie.loadAnimation({
-      container: document.querySelector("#lottie-2"),
-      animationData: json2,
-      loop: false,
-    });
-    lottie.loadAnimation({
-      container: document.querySelector("#lottie-3"),
-      animationData: json3,
-      loop: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   lottie.loadAnimation({
+  //     container: document.querySelector("#lottie"),
+  //     animationData: json1,
+  //     loop: false,
+  //   });
+  //   lottie.loadAnimation({
+  //     container: document.querySelector("#lottie-1"),
+  //     animationData: json2,
+  //     loop: false,
+  //   });
+  //   lottie.loadAnimation({
+  //     container: document.querySelector("#lottie-2"),
+  //     animationData: json3,
+  //     loop: false,
+  //   });
+  //   lottie.loadAnimation({
+  //     container: document.querySelector("#lottie-3"),
+  //     animationData: json4,
+  //     loop: true,
+  //   });
+  // }, []);
 
-  // console.log(json);
+  // Framer motion staggerChildren for staggered fade in animation
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
+  const itemStyle = {
+    height: "100px",
+    width: "auto",
+    backgroundColor: "white",
+    padding: "10px",
+    borderRadius: "10px",
+    display: "flex",
+    alignItems: "center",
+  };
 
   return (
     <div className={styles.container}>
@@ -119,10 +144,10 @@ export default function Home() {
           </a>
         </div>
 
-        <section style={{ height: "auto" }}>
+        {/* <section style={{ height: "auto" }}>
           This is a section
           <div id="lottie" style={{ width: "100%" }}></div>
-        </section>
+        </section> */}
 
         {/* Mobile version below */}
 
@@ -131,10 +156,10 @@ export default function Home() {
           <div id="lottie-1" style={{ width: "100%" }}></div>
         </section> */}
 
-        <section style={{ height: "auto", width: "100%" }}>
+        {/* <section style={{ height: "auto", width: "100%" }}>
           This is a section
           <div id="lottie-2" style={{ width: "100%", height: "500px" }}></div>
-        </section>
+        </section> */}
 
         {/* <section style={{ height: "auto" }}>
           This is a section
@@ -161,13 +186,67 @@ export default function Home() {
           ></lottie-player>
         </div> */}
 
-        <section style={{ height: "200px" }}>This is a section</section>
+        <section style={{ height: "200px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: -300 },
+              }}
+            >
+              Hello framer motion!
+            </motion.h2>
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              // Dont use viewport if you want the animation to appear everytime the user scrolls around the page
+              // viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: 300 },
+              }}
+            >
+              Hello framer motion!
+            </motion.h2>
+          </div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            style={{
+              display: "flex",
+              width: "400px",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <motion.div variants={item} style={itemStyle}>
+              Dank
+            </motion.div>
+            <motion.div variants={item} style={itemStyle}>
+              Memes
+            </motion.div>
+            <motion.div variants={item} style={itemStyle}>
+              For
+            </motion.div>
+            <motion.div variants={item} style={itemStyle}>
+              Everyone
+            </motion.div>
+            <motion.div variants={item} style={itemStyle}>
+              Willing
+            </motion.div>
+          </motion.div>
+        </section>
 
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1.8, ease: "backInOut" }}
           variants={{
             visible: { opacity: 1 },
             hidden: { opacity: 0 },
