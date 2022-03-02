@@ -1,8 +1,44 @@
+import React, { useEffect } from "react";
+
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
+import { motion } from "framer-motion";
+
+import lottie from "lottie-web";
+import json from "../data/lottie-1.json";
+import json1 from "../data/lottie-2.json";
+import json2 from "../data/lottie-3.json";
+import json3 from "../data/lottie-4.json";
+
 export default function Home() {
+  // Use ref instead of query selector?
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#lottie"),
+      animationData: json,
+      loop: false,
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#lottie-1"),
+      animationData: json1,
+      loop: false,
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#lottie-2"),
+      animationData: json2,
+      loop: false,
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#lottie-3"),
+      animationData: json3,
+      loop: true,
+    });
+  }, []);
+
+  // console.log(json);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +51,41 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        {/* <motion.div
+          animate={{
+            x: 0,
+            y: 0,
+            scale: 1,
+            rotate: 90,
+          }}
+          style={{ fontSize: "40px" }}
+        >
+          Heyo
+        </motion.div> */}
+
+        {/* <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          style={{ height: "auto", width: "400px" }}
+        >
+          <h1>
+            Unlock your digital potential with a bespoke blockchain development
+            company.
+          </h1>
+          <p>
+            Dekrypt connects clients and their vision with an experienced and
+            multi-talented blockchain &amp; application development team to
+            create highly personalized solutions that stand out from the crowd.
+          </p>
+          <button>Get Started</button>
+        </motion.section> */}
 
         <p className={styles.description}>Hello Netlify!</p>
 
@@ -47,6 +118,85 @@ export default function Home() {
             </p>
           </a>
         </div>
+
+        <section style={{ height: "auto" }}>
+          This is a section
+          <div id="lottie" style={{ width: "100%" }}></div>
+        </section>
+
+        {/* Mobile version below */}
+
+        {/* <section style={{ height: "auto" }}>
+          This is a section
+          <div id="lottie-1" style={{ width: "100%" }}></div>
+        </section> */}
+
+        <section style={{ height: "auto", width: "100%" }}>
+          This is a section
+          <div id="lottie-2" style={{ width: "100%", height: "500px" }}></div>
+        </section>
+
+        {/* <section style={{ height: "auto" }}>
+          This is a section
+          <div id="lottie-3" style={{ width: "100%", height: "50%" }}></div>
+        </section> */}
+
+        {/* <div class="lottie-wrapper lottie-1">
+          <lottie-player
+            src="https://assets2.lottiefiles.com/packages/lf20_zermauuu.json"
+            background="transparent"
+            speed="1"
+            style="width: 100%; height: 100%; margin: 0 auto"
+            autoplay=""
+          ></lottie-player>
+        </div>
+        <div class="lottie-wrapper lottie-1-mob">
+          <lottie-player
+            src="https://assets6.lottiefiles.com/packages/lf20_k8wlafhn.json"
+            background="transparent"
+            speed="1"
+            style="width: 100%; height: 100%; margin: 0 auto"
+            autoplay=""
+            loop
+          ></lottie-player>
+        </div> */}
+
+        <section style={{ height: "200px" }}>This is a section</section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            visible: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          style={{ height: "auto", width: "400px" }}
+        >
+          <h1>
+            Unlock your digital potential with a bespoke blockchain development
+            company.
+          </h1>
+          <p>
+            Dekrypt connects clients and their vision with an experienced and
+            multi-talented blockchain &amp; application development team to
+            create highly personalized solutions that stand out from the crowd.
+          </p>
+          <button>Get Started</button>
+          {/* <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            variants={{
+              visible: { opacity: 1, scale: 1 },
+              hidden: { opacity: 0, scale: 0 },
+            }}
+          >
+            HELLLO
+          </motion.div> */}
+        </motion.section>
       </main>
 
       <footer className={styles.footer}>
