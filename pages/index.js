@@ -227,11 +227,83 @@ export default function Home() {
               },
             }}
           >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <h3>Title 1</h3>
+                <p>Subtitle</p>
+                <span>Stars...</span>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+                  ad minima magni sed aspernatur nobis, totam mollitia tempore
+                  optio modi explicabo hic! Similique saepe non consectetur ad
+                  voluptates maiores est.
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <h3>Title 2</h3>
+                <p>Subtitle</p>
+                <span>Stars...</span>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+                  ad minima magni sed aspernatur nobis, totam mollitia tempore
+                  optio modi explicabo hic! Similique saepe non consectetur ad
+                  voluptates maiores est.
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <h3>Title 3</h3>
+                <p>Subtitle</p>
+                <span>Stars...</span>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+                  ad minima magni sed aspernatur nobis, totam mollitia tempore
+                  optio modi explicabo hic! Similique saepe non consectetur ad
+                  voluptates maiores est.
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <h3>Title 4</h3>
+                <p>Subtitle</p>
+                <span>Stars...</span>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+                  ad minima magni sed aspernatur nobis, totam mollitia tempore
+                  optio modi explicabo hic! Similique saepe non consectetur ad
+                  voluptates maiores est.
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div style={{ position: "relative" }}>
+                <p
+                  style={{
+                    position: "absolute",
+                    top: "-50px",
+                    right: "45%",
+                    zIndex: 10,
+                  }}
+                >
+                  IMAGE
+                </p>
+                <div>
+                  <h3>Title 5</h3>
+                  <p>Subtitle</p>
+                  <span>Stars...</span>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Unde ad minima magni sed aspernatur nobis, totam mollitia
+                    tempore optio modi explicabo hic! Similique saepe non
+                    consectetur ad voluptates maiores est.
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
           </Swiper>
         </div>
 
@@ -332,7 +404,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               // Dont use viewport if you want the animation to appear everytime the user scrolls around the page
-              // viewport={{ once: true }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               variants={{
                 visible: { opacity: 1, x: 0 },
