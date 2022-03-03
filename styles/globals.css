@@ -15,3 +15,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.swiper:hover {
+  cursor: pointer;
+}
+
+.swiper {
+  height: 350px;
+}
+
+.swiper-slide {
+  background-color: salmon;
+}

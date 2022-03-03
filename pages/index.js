@@ -1,11 +1,18 @@
+// import "swiper/css";
 import React, { useState, useEffect } from "react";
-
+import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+
 import styles from "../styles/Home.module.css";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 // import lottie from "lottie-web";
 // import json1 from "../data/lottie-1.json";
@@ -188,6 +195,45 @@ export default function Home() {
         )}
 
         <h2>Accordion</h2>
+
+        <h2>Carousel</h2>
+        <div
+          style={{
+            backgroundColor: "lightblue",
+            width: "100%",
+            height: "400px",
+          }}
+        >
+          <Swiper
+            // install Swiper modules
+            // modules={[Navigation, Pagination, Scrollbar, A11y]}
+            // spaceBetween={50}
+            // slidesPerView={3}
+            // navigation
+            // pagination={{ clickable: true }}
+            // scrollbar={{ draggable: true }}
+            // onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log("slide change")}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={50}
+            slidesPerView="4"
+            navigation
+            pagination={{ clickable: true }}
+            // scrollbar={{ draggable: true }}
+            loop={true}
+          >
+            <SwiperSlide>Slide 1</SwiperSlide>
+            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>Slide 5</SwiperSlide>
+          </Swiper>
+        </div>
+
+        <h2>Multilanguage</h2>
+        <a href="https://github.com/vinissimus/next-translate">
+          https://github.com/vinissimus/next-translate
+        </a>
 
         {/* https://chriswrightdesign.com/experiments/accordion-transitional/ */}
 
