@@ -1,4 +1,3 @@
-// import "swiper/css";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
@@ -216,11 +215,17 @@ export default function Home() {
             // onSlideChange={() => console.log("slide change")}
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
-            slidesPerView="4"
+            slidesPerView="1"
             navigation
             pagination={{ clickable: true }}
             // scrollbar={{ draggable: true }}
             loop={true}
+            breakpoints={{
+              640: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+            }}
           >
             <SwiperSlide>Slide 1</SwiperSlide>
             <SwiperSlide>Slide 2</SwiperSlide>
