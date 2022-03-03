@@ -3,6 +3,8 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
+import useTranslation from "next-translate/useTranslation";
+
 import styles from "../styles/Home.module.css";
 
 import { motion } from "framer-motion";
@@ -21,6 +23,7 @@ import "swiper/css/scrollbar";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation("common");
 
   // Use lottie animations
   // Use ref instead of query selector?
@@ -217,7 +220,7 @@ export default function Home() {
             spaceBetween={50}
             slidesPerView="1"
             navigation
-            pagination={{ clickable: true }}
+            // pagination={{ clickable: true }}
             // scrollbar={{ draggable: true }}
             loop={true}
             breakpoints={{
@@ -281,7 +284,7 @@ export default function Home() {
             </SwiperSlide>
             <SwiperSlide>
               <div style={{ position: "relative" }}>
-                <p
+                {/* <p
                   style={{
                     position: "absolute",
                     top: "-50px",
@@ -290,7 +293,7 @@ export default function Home() {
                   }}
                 >
                   IMAGE
-                </p>
+                </p> */}
                 <div>
                   <h3>Title 5</h3>
                   <p>Subtitle</p>
@@ -307,10 +310,32 @@ export default function Home() {
           </Swiper>
         </div>
 
-        <h2>Multilanguage</h2>
-        <a href="https://github.com/vinissimus/next-translate">
-          https://github.com/vinissimus/next-translate
-        </a>
+        {/* Multilanguage usage */}
+        {/* https://medium.com/flycode/step-by-step-how-to-internationalize-your-nextjs-app-with-next-translate-3c8b13b87fc4 */}
+        <div>
+          <h2>Multilanguage</h2>
+          <a href="https://github.com/vinissimus/next-translate">
+            https://github.com/vinissimus/next-translate
+          </a>
+          <div>
+            <h1>{t("title")}!</h1>
+            <p className={styles.description}>{t("description")}</p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                width: "150px",
+              }}
+            >
+              <Link href="/" locale="en">
+                <a>Anglais</a>
+              </Link>
+              <Link href="/" locale="fr">
+                <a>Français</a>
+              </Link>
+            </div>
+          </div>
+        </div>
 
         {/* https://chriswrightdesign.com/experiments/accordion-transitional/ */}
 
