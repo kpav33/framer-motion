@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Head from "next/head";
 import Image from "next/image";
@@ -14,6 +14,8 @@ import Link from "next/link";
 // import json4 from "../data/lottie-4.json";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   // Use lottie animations
   // Use ref instead of query selector?
   // useEffect(() => {
@@ -63,6 +65,28 @@ export default function Home() {
     borderRadius: "10px",
     display: "flex",
     alignItems: "center",
+  };
+
+  // Draw a path
+  const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (i) => {
+      const delay = 1 + i * 0.5;
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 1, bounce: 0 },
+          opacity: { delay, duration: 0.01 },
+        },
+      };
+    },
+  };
+
+  const lineStyles = {
+    strokeWidth: "5px",
+    strokeLinecap: "round",
+    fill: "transparent",
   };
 
   return (
@@ -117,6 +141,55 @@ export default function Home() {
         </motion.section> */}
 
         <p className={styles.description}>Hello Netlify!</p>
+
+        <h2>Using lines in framer motion...</h2>
+        <button onClick={() => setIsOpen((prevState) => !prevState)}>
+          {isOpen ? "Close" : "Open"}
+        </button>
+        {isOpen && (
+          <motion.svg
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.line
+              x1="150"
+              y1="20"
+              x2="50"
+              y2="20"
+              stroke="#00cc88"
+              variants={draw}
+              custom={0}
+              style={lineStyles}
+            />
+            <motion.line
+              x1="50"
+              y1="20"
+              x2="50"
+              y2="100"
+              stroke="#00cc88"
+              variants={draw}
+              custom={1.5}
+              style={lineStyles}
+            />
+            <motion.line
+              x1="50"
+              y1="100"
+              x2="0"
+              y2="100"
+              stroke="#00cc88"
+              variants={draw}
+              custom={2.5}
+              style={lineStyles}
+            />
+          </motion.svg>
+        )}
+
+        <h2>Accordion</h2>
+
+        {/* https://chriswrightdesign.com/experiments/accordion-transitional/ */}
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
@@ -337,3 +410,6 @@ export default function Home() {
     </div>
   );
 }
+
+// A guide on how to create and use forms with Netlify and Next.js
+// https://css-tricks.com/how-to-create-a-contact-form-with-next-js-and-netlify/
