@@ -23,6 +23,10 @@ import "swiper/css/scrollbar";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const { t } = useTranslation("common");
 
   // Use lottie animations
@@ -199,103 +203,42 @@ export default function Home() {
         <h2>Accordion</h2>
 
         <h2>Carousel</h2>
-        <div
-          style={{
-            backgroundColor: "lightblue",
-            width: "100%",
-            height: "400px",
-          }}
-        >
-          <Swiper
-            // install Swiper modules
-            // modules={[Navigation, Pagination, Scrollbar, A11y]}
-            // spaceBetween={50}
-            // slidesPerView={3}
-            // navigation
-            // pagination={{ clickable: true }}
-            // scrollbar={{ draggable: true }}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log("slide change")}
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView="1"
-            navigation
-            // pagination={{ clickable: true }}
-            // scrollbar={{ draggable: true }}
-            loop={true}
-            breakpoints={{
-              640: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-              },
+        {/* https://github.com/vercel/next.js/discussions/17443 */}
+        {mounted && (
+          <div
+            style={{
+              backgroundColor: "lightblue",
+              width: "100%",
+              height: "400px",
             }}
           >
-            <SwiperSlide>
-              <div>
-                <h3>Title 1</h3>
-                <p>Subtitle</p>
-                <span>Stars...</span>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-                  ad minima magni sed aspernatur nobis, totam mollitia tempore
-                  optio modi explicabo hic! Similique saepe non consectetur ad
-                  voluptates maiores est.
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <h3>Title 2</h3>
-                <p>Subtitle</p>
-                <span>Stars...</span>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-                  ad minima magni sed aspernatur nobis, totam mollitia tempore
-                  optio modi explicabo hic! Similique saepe non consectetur ad
-                  voluptates maiores est.
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <h3>Title 3</h3>
-                <p>Subtitle</p>
-                <span>Stars...</span>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-                  ad minima magni sed aspernatur nobis, totam mollitia tempore
-                  optio modi explicabo hic! Similique saepe non consectetur ad
-                  voluptates maiores est.
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <h3>Title 4</h3>
-                <p>Subtitle</p>
-                <span>Stars...</span>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-                  ad minima magni sed aspernatur nobis, totam mollitia tempore
-                  optio modi explicabo hic! Similique saepe non consectetur ad
-                  voluptates maiores est.
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div style={{ position: "relative" }}>
-                {/* <p
-                  style={{
-                    position: "absolute",
-                    top: "-50px",
-                    right: "45%",
-                    zIndex: 10,
-                  }}
-                >
-                  IMAGE
-                </p> */}
+            <Swiper
+              // install Swiper modules
+              // modules={[Navigation, Pagination, Scrollbar, A11y]}
+              // spaceBetween={50}
+              // slidesPerView={3}
+              // navigation
+              // pagination={{ clickable: true }}
+              // scrollbar={{ draggable: true }}
+              // onSwiper={(swiper) => console.log(swiper)}
+              // onSlideChange={() => console.log("slide change")}
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={50}
+              slidesPerView="1"
+              navigation
+              // pagination={{ clickable: true }}
+              // scrollbar={{ draggable: true }}
+              loop={true}
+              breakpoints={{
+                640: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
+              }}
+            >
+              <SwiperSlide>
                 <div>
-                  <h3>Title 5</h3>
+                  <h3>Title 1</h3>
                   <p>Subtitle</p>
                   <span>Stars...</span>
                   <p>
@@ -305,10 +248,74 @@ export default function Home() {
                     consectetur ad voluptates maiores est.
                   </p>
                 </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <h3>Title 2</h3>
+                  <p>Subtitle</p>
+                  <span>Stars...</span>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Unde ad minima magni sed aspernatur nobis, totam mollitia
+                    tempore optio modi explicabo hic! Similique saepe non
+                    consectetur ad voluptates maiores est.
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <h3>Title 3</h3>
+                  <p>Subtitle</p>
+                  <span>Stars...</span>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Unde ad minima magni sed aspernatur nobis, totam mollitia
+                    tempore optio modi explicabo hic! Similique saepe non
+                    consectetur ad voluptates maiores est.
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div>
+                  <h3>Title 4</h3>
+                  <p>Subtitle</p>
+                  <span>Stars...</span>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Unde ad minima magni sed aspernatur nobis, totam mollitia
+                    tempore optio modi explicabo hic! Similique saepe non
+                    consectetur ad voluptates maiores est.
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div style={{ position: "relative" }}>
+                  {/* <p
+                  style={{
+                    position: "absolute",
+                    top: "-50px",
+                    right: "45%",
+                    zIndex: 10,
+                  }}
+                >
+                  IMAGE
+                </p> */}
+                  <div>
+                    <h3>Title 5</h3>
+                    <p>Subtitle</p>
+                    <span>Stars...</span>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Unde ad minima magni sed aspernatur nobis, totam mollitia
+                      tempore optio modi explicabo hic! Similique saepe non
+                      consectetur ad voluptates maiores est.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        )}
 
         {/* Multilanguage usage */}
         {/* https://medium.com/flycode/step-by-step-how-to-internationalize-your-nextjs-app-with-next-translate-3c8b13b87fc4 */}
