@@ -22,6 +22,7 @@
       background-color: transparent;
       padding: 0px;
       cursor: pointer;
+      flex-direction: row-reverse;
   
       padding-top: 18px;
       padding-bottom: 18px;
@@ -49,18 +50,23 @@
   }
 
   .showDescription {
-    height: 2rem;
+    height: 3rem;
     margin-bottom: 15px;
   }
   
   /* Arrows */
   
   /* closed */
-  .faq__question-button::after {
+  .faq__questionButton::after {
     transition: transform 300ms ease-out;
+    // transform: rotate(720deg);
+  }
+
+  .fontWeightBold {
+    font-weight: 700;
   }
   
   /* open */
-  .font-weight-bold::after {
-    transform: rotate(720deg);
+  .fontWeightBold::after {
+    transform: rotate(0deg);
   }

@@ -29,11 +29,11 @@ const questionsAnswers = [
 ];
 
 export default function Accordion() {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const renderedQuestionsAnswers = questionsAnswers.map((item, index) => {
     const showDescription = index === activeIndex ? styles.showDescription : "";
-    const fontWeightBold = index === activeIndex ? "font-weight-bold" : "";
+    const fontWeightBold = index === activeIndex ? styles.fontWeightBold : "";
     const ariaExpanded = index === activeIndex ? "true" : "false";
     return (
       <AccordionItem
@@ -51,9 +51,11 @@ export default function Accordion() {
   });
 
   return (
-    <div className={styles.faq}>
-      <h1 className={styles.faq__title}>FAQ</h1>
-      <dl className={styles.faq__list}>{renderedQuestionsAnswers}</dl>
+    <div>
+      <div className={styles.faq}>
+        <h1 className={styles.faq__title}>FAQ</h1>
+        <dl className={styles.faq__list}>{renderedQuestionsAnswers}</dl>
+      </div>
     </div>
   );
 }

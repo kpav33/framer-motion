@@ -19,7 +19,7 @@ export default function AccordionItem({
           aria-controls={`faq${index + 1}_desc`}
           data-qa="faq__question-button"
           //   className={`faq__question-button ${fontWeightBold}`}
-          className={styles1.faq__questionButton}
+          className={`${styles1.faq__questionButton} ${fontWeightBold}`}
           onClick={onClick}
         >
           {item.question}
