@@ -3,6 +3,8 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
+import Accordion from "../components/Accordion";
+
 import useTranslation from "next-translate/useTranslation";
 
 import styles from "../styles/Home.module.css";
@@ -201,6 +203,7 @@ export default function Home() {
         )}
 
         <h2>Accordion</h2>
+        <Accordion />
 
         <h2>Carousel</h2>
         {/* https://github.com/vercel/next.js/discussions/17443 */}
