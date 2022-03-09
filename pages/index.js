@@ -214,11 +214,17 @@ export default function Home() {
           defaultIndex="1"
           onItemClick={(item) => console.log(item)}
         >
-          <AccordionItemTwo label="A" index="1">
-            Lorem ipsum
+          <AccordionItemTwo label="Blockchain consulting" index="1">
+            Do you need help with starting your own token? Are you looking for
+            information on how to build, market and manage your crypto project?
+            Get in touch with us and we can provide you with answers coming from
+            our own rich experience.
           </AccordionItemTwo>
-          <AccordionItemTwo label="B" index="2">
-            Dolor sit amet
+          <AccordionItemTwo label="Full-stack development" index="2">
+            We have a multi-disciplinary team that has experience with building
+            Node-based backend systems with databases and frontend developers
+            that can bridge any type of functionality into your project using
+            the latest technologies.
           </AccordionItemTwo>
         </AccordionTwo>
 

@@ -19,7 +19,7 @@ export default function AccordionTwo({ defaultIndex, onItemClick, children }) {
   );
 
   return (
-    <>
+    <div style={{ width: "500px", height: "500px" }}>
       {items.map(({ props }) => (
         <AccordionItemTwo
           key={props.label}
@@ -31,6 +31,6 @@ export default function AccordionTwo({ defaultIndex, onItemClick, children }) {
           {props.children}
         </AccordionItemTwo>
       ))}
-    </>
+    </div>
   );
 }

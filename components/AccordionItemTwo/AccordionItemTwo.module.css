@@ -1,14 +1,37 @@
 /* .accordionItem {} */
 
 .collapsed {
-    display: none;
+    /* display: none; */
 }
   
 .expanded {
-    display: block;
+    /* display: block; */
 }
   
 .accordionButton {
-    display: block;
+    /* display: block; */
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    background-color: salmon;
+    padding: 10px 10px 6px 10px;
+    transition: all 0.5s;
+}
+
+.accordionButton div {
+    margin-right: 25px;
+}
+
+.accordionButton:hover {
+    cursor: pointer;
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    background: lightgray;
 }
