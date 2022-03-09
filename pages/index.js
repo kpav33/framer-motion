@@ -6,6 +6,7 @@ import Image from "next/image";
 import Accordion from "../components/Accordion";
 import AccordionTwo from "../components/AccordionTwo";
 import AccordionItemTwo from "../components/AccordionItemTwo";
+import AccordionThree from "../components/AccordionThree";
 
 import useTranslation from "next-translate/useTranslation";
 
@@ -227,6 +228,9 @@ export default function Home() {
             the latest technologies.
           </AccordionItemTwo>
         </AccordionTwo>
+
+        <h3>Accordion Three</h3>
+        <AccordionThree />
 
         <h2>Carousel</h2>
         {/* https://github.com/vercel/next.js/discussions/17443 */}
