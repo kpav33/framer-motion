@@ -1,0 +1,14 @@
+/* .accordionItem {} */
+
+.collapsed {
+    display: none;
+}
+  
+.expanded {
+    display: block;
+}
+  
+.accordionButton {
+    display: block;
+    width: 100%;
+}

@@ -4,6 +4,8 @@ import Head from "next/head";
 import Image from "next/image";
 
 import Accordion from "../components/Accordion";
+import AccordionTwo from "../components/AccordionTwo";
+import AccordionItemTwo from "../components/AccordionItemTwo";
 
 import useTranslation from "next-translate/useTranslation";
 
@@ -203,7 +205,22 @@ export default function Home() {
         )}
 
         <h2>Accordion</h2>
+
+        <h3>Accordion One</h3>
         <Accordion />
+
+        <h3>Accordion Two</h3>
+        <AccordionTwo
+          defaultIndex="1"
+          onItemClick={(item) => console.log(item)}
+        >
+          <AccordionItemTwo label="A" index="1">
+            Lorem ipsum
+          </AccordionItemTwo>
+          <AccordionItemTwo label="B" index="2">
+            Dolor sit amet
+          </AccordionItemTwo>
+        </AccordionTwo>
 
         <h2>Carousel</h2>
         {/* https://github.com/vercel/next.js/discussions/17443 */}
